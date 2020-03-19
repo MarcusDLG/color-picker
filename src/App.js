@@ -8,7 +8,6 @@ class App extends Component {
   }
 
   trackHue = e => {
-    // console.log(e.target.value)
     this.setState({
       hue: e.target.value,
     })
@@ -31,24 +30,42 @@ class App extends Component {
     return (
       <>
         <main>
-          <aside className="leftSide">
-            <h1>Color</h1>
-            <section
-              className="ColorBox"
+          <section className="leftSide">
+            <h1
               style={{
-                backgroundColor: `hsl(${this.state.hue},${this.state.saturation},${this.state.light})`,
+                color: `hsla(${this.state.hue},
+                ${this.state.saturation}%,
+                ${this.state.light}%)`,
               }}
             >
-              {' '}
-            </section>
-          </aside>
+              Color
+            </h1>
+            <section
+              className="colorBox"
+              style={{
+                backgroundColor: `hsla(${this.state.hue},
+                ${this.state.saturation}%,
+                ${this.state.light}%)`,
+              }}
+            ></section>
+            <h2
+              style={{
+                color: `hsla(${this.state.hue},
+                ${this.state.saturation}%,
+                ${this.state.light}%)`,
+              }}
+            >
+              HSL: {this.state.hue}, {this.state.saturation}%,
+              {this.state.light}%
+            </h2>
+          </section>
           <section className="rightSide">
             <section className="H">
               <p>Hue</p>
               <input
                 onChange={this.trackHue}
                 type="range"
-                class="hue"
+                className="hue"
                 name="hue"
                 min="0"
                 max="360"
@@ -60,11 +77,11 @@ class App extends Component {
               <input
                 onChange={this.trackSaturation}
                 type="range"
-                class="saturation"
+                className="saturation"
                 name="saturation"
                 min="0"
                 max="100"
-                value=""
+                value={this.state.saturation}
               ></input>
             </section>
             <section className="L">
@@ -72,11 +89,11 @@ class App extends Component {
               <input
                 onChange={this.trackLight}
                 type="range"
-                class="light"
+                className="light"
                 name="light"
                 min="0"
                 max="100"
-                value=""
+                value={this.state.light}
               ></input>
             </section>
           </section>

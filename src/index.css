@@ -11,25 +11,31 @@ body {
   min-height: 100%;
 }
 
-.ColorBox {
+.colorBox {
   height: 4rem;
   width: 4rem;
   border: .5rem solid rgb(88, 89, 90);
+  align-self: center;
 }
 
 main {
-  padding: 3rem;
+  padding: 10rem;
   background-color: rgb(94, 99, 109);
-  display: flex;
+  display: grid;
+  grid-template-columns: 30% 70%;
   border: darkgrey;
 }
 
 .leftSide {
-  color: rgb(51, 52, 53);
+  display: grid;
+  grid-template-columns: 100%;
   margin-left: 3rem;
-  text-align: center;
+  /* text-align: center; */
+  align-content: center;
+  align-self: center;
 }
 
 .rightSide {
-  margin-left: 3rem
+  margin: 0 3rem;
+  padding-left: 5rem;
 }
