@@ -33,7 +33,7 @@ class App extends Component {
           <section className="leftSide">
             <h1
               style={{
-                color: `hsla(${this.state.hue},
+                color: `hsl(${this.state.hue},
                 ${this.state.saturation}%,
                 ${this.state.light}%)`,
               }}
@@ -43,14 +43,14 @@ class App extends Component {
             <section
               className="colorBox"
               style={{
-                backgroundColor: `hsla(${this.state.hue},
+                backgroundColor: `hsl(${this.state.hue},
                 ${this.state.saturation}%,
                 ${this.state.light}%)`,
               }}
             ></section>
             <h2
               style={{
-                color: `hsla(${this.state.hue},
+                color: `hsl(${this.state.hue},
                 ${this.state.saturation}%,
                 ${this.state.light}%)`,
               }}
