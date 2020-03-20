@@ -50,7 +50,7 @@ class App extends Component {
               style={{
                 color: `hsl(${this.state.hue},
                 ${this.state.saturation}%,
-                ${this.state.light}%)${this.state.alpha})`,
+                ${this.state.light}%,${this.state.alpha})`,
               }}
             >
               Color
@@ -67,7 +67,7 @@ class App extends Component {
               style={{
                 color: `hsl(${this.state.hue},
                 ${this.state.saturation}%,
-                ${this.state.light}%)${this.state.alpha})`,
+                ${this.state.light}%,${this.state.alpha})`,
               }}
             >
               HSLA: {this.state.hue}, {this.state.saturation}%,

@@ -14,7 +14,7 @@ body {
 .colorBox {
   height: 4rem;
   width: 4rem;
-  border: .5rem solid rgb(88, 89, 90);
+  border: 0.5rem solid rgb(88, 89, 90);
   /* background-image: url("./components/images/portal.png");
   background-size: cover;
   background-repeat: no-repeat; */
@@ -45,5 +45,5 @@ main {
 }
 
 .random {
-  margin: 2rem 18rem 2rem 0rem;
+  margin: 2rem 0rem 2rem 0rem;
 }
