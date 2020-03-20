@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 
 class App extends Component {
   state = {
-    hue: 180,
-    saturation: 50,
-    light: 50,
+    hue: Math.round(Math.random() * 360),
+    saturation: Math.round(Math.random() * 100),
+    light: Math.round(Math.random() * 100),
+    alpha: 1,
   }
 
   trackHue = e => {
@@ -25,6 +26,20 @@ class App extends Component {
       light: e.target.value,
     })
   }
+  trackAlpha = e => {
+    console.log(e.target.value)
+    this.setState({
+      alpha: e.target.value,
+    })
+  }
+  randomColor = () => {
+    this.setState({
+      hue: Math.round(Math.random() * 360),
+      saturation: Math.round(Math.random() * 100),
+      light: Math.round(Math.random() * 100),
+      alpha: (Math.random() * 1).toFixed(2),
+    })
+  }
 
   render() {
     return (
@@ -35,7 +50,7 @@ class App extends Component {
               style={{
                 color: `hsl(${this.state.hue},
                 ${this.state.saturation}%,
-                ${this.state.light}%)`,
+                ${this.state.light}%)${this.state.alpha})`,
               }}
             >
               Color
@@ -43,20 +58,20 @@ class App extends Component {
             <section
               className="colorBox"
               style={{
-                backgroundColor: `hsl(${this.state.hue},
+                backgroundColor: `hsla(${this.state.hue},
                 ${this.state.saturation}%,
-                ${this.state.light}%)`,
+                ${this.state.light}%,${this.state.alpha})`,
               }}
             ></section>
             <h2
               style={{
                 color: `hsl(${this.state.hue},
                 ${this.state.saturation}%,
-                ${this.state.light}%)`,
+                ${this.state.light}%)${this.state.alpha})`,
               }}
             >
-              HSL: {this.state.hue}, {this.state.saturation}%,
-              {this.state.light}%
+              HSLA: {this.state.hue}, {this.state.saturation}%,
+              {this.state.light}%, {this.state.alpha}
             </h2>
           </section>
           <section className="rightSide">
@@ -96,6 +111,22 @@ class App extends Component {
                 value={this.state.light}
               ></input>
             </section>
+            <section className="A">
+              <p>Alpha</p>
+              <input
+                onChange={this.trackAlpha}
+                type="range"
+                className=""
+                name="alpha"
+                min="0"
+                max="1"
+                step=".01"
+                value={this.state.alpha}
+              ></input>
+            </section>
+            <button className="random" onClick={this.randomColor}>
+              Random Color
+            </button>
           </section>
         </main>
       </>
